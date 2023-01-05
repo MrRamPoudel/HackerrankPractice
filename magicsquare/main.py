@@ -7,6 +7,8 @@ import numpy as np
 
 def formingMagicSquare(s):
     # Write your code here
+    # these are all the possible 3x3 magic square
+    # notice that sum of each col, row and diag = 15 since 9(1+9)/2 = 45/3 = 15
     first = [[8,1,6], [3,5,7],[4,9,2]]
     second = [[6,1,8], [7,5,3],[2,9,4]]
     third = [[8,3,4], [1,5,9],[6,7,2]]
@@ -22,11 +24,9 @@ def formingMagicSquare(s):
         sum = 0
         for i in range(0,3):
             for j in range(0,3):
-                
                 sum += abs(s[i][j] - magic[i][j])
-        difference = sum
-        if difference < max:
-            max = difference
+        if sum < max:
+            max = sum
     return max
 
 test1= [[4,8,2], [4,5,7],[6,1,6]]
